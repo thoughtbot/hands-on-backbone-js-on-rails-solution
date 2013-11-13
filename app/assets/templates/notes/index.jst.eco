@@ -1,5 +1,5 @@
 <ul>
-  <% for note in @notes: %>
+  <% for note in @notes.models: %>
     <li>
       <dl>
         <dt>Title</dt>
