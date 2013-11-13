@@ -1,5 +1,0 @@
-<input type="text" class="note-title" value="<%= @note.get('title') %>" />
-<br />
-<textarea class="note-content"><%= @note.get('content') %></textarea>
-<br />
-<input type="submit" />
