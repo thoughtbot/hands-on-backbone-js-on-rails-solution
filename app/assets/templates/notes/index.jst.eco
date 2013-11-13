@@ -1,0 +1,12 @@
+<ul>
+  <% for note in @notes: %>
+    <li>
+      <dl>
+        <dt>Title</dt>
+        <dd><a href="<%= note.url() %>"><%= note.get('title') %></a></dd>
+        <dt>Content</dt>
+        <dd><%= note.get('content') %></dd>
+      </dl>
+    </li>
+  <% end %>
+</ul>
