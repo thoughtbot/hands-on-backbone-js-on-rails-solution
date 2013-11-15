@@ -1,5 +1,5 @@
 Note.destroy_all
 
-Note.create(title: "The first note", content: "I am a note!")
-Note.create(title: "The second note", content: "")
-Note.create(title: "The third note", content: "more notes")
+Note.create(title: "The first note",  body: StickyNote.new(content: "I am a note!"))
+Note.create(title: "The second note", body: StickyNote.new(content: ""))
+Note.create(title: "The third note",  body: StickyNote.new(content: "more notes"))
