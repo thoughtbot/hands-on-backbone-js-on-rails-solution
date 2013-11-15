@@ -62,6 +62,10 @@
 
         .todo-item-title {
           width: 85%;
+
+          &:disabled {
+            text-decoration: line-through;
+          }
         }
       }
     }
