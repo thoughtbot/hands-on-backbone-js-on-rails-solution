@@ -53,6 +53,18 @@
       height: 100%;
       resize: none;
     }
+
+    .todo-items {
+      padding: 0;
+
+      .todo-item {
+        list-style: none;
+
+        .todo-item-title {
+          width: 85%;
+        }
+      }
+    }
   }
 
   .editing-footer {

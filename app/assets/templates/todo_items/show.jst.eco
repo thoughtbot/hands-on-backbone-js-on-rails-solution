@@ -1,0 +1,1 @@
+<input type="text" class="todo-item-title" value="<%= @todoItem.get('title') %>" />
