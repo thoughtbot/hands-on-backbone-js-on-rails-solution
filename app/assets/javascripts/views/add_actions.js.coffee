@@ -11,5 +11,5 @@ class App.Views.AddActions extends Backbone.View
     this
 
   addNote: ->
-    @collection.add({})
+    @collection.add(new App.Models.StickyNote)
     false

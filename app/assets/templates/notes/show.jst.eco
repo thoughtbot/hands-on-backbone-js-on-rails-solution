@@ -3,7 +3,6 @@
     placeholder="Title..."/>
 </header>
 <div class="body">
-  <textarea class="note-content" placeholder="Content..."><%= @note.get("content") %></textarea>
 </div>
 
 <div class="normal-footer"></div>

@@ -8,6 +8,11 @@ window.ScratchPad =
     view = new @Views.Notes(collection: @AllNotes)
     $('#container').html(view.render().el)
 
+  viewFor: (model) ->
+    modelClass = model.constructor.name
+    viewClass = @Views[modelClass]
+    new viewClass(model: model)
+
 window.App = window.ScratchPad
 
 $(document).ready ->
