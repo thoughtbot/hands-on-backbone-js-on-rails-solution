@@ -6,6 +6,7 @@ class App.Views.ShowNote extends Backbone.View
   initialize: ->
     @listenTo(@model, "invalid", @addError)
     @listenTo(@model, "error", @addError)
+    @lastUpdated = new App.Views.LastUpdated(model: @model)
 
   events:
     'change': 'save'
@@ -16,7 +17,12 @@ class App.Views.ShowNote extends Backbone.View
 
   render: ->
     @$el.html(@template(note: @model))
+    @lastUpdated.setElement(@$('.normal-footer')).render()
     this
+
+  remove: ->
+    @lastUpdated.remove(arguments...)
+    super(arguments...)
 
   save: ->
     @model.set

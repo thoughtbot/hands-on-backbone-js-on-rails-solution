@@ -14,7 +14,9 @@ class NotesController < ApplicationController
 
   def update
     note.update_attributes(note_params)
-    respond_with note
+    respond_with(note) do |format|
+      format.json { render json: note }
+    end
   end
 
   def destroy
