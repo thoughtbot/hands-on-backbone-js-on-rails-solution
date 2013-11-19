@@ -15,6 +15,8 @@
 //= require lodash
 //= require backbone
 //= require moment
+//= require backbone.stickit
+//= require backbone.marionette
 //= require scratch_pad
 //= require_tree ../templates
 //= require_tree ./models

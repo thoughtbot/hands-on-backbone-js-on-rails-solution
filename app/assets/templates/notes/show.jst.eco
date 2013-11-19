@@ -1,6 +1,5 @@
 <header class="title-container">
-  <input type="text" class="note-title" value="<%= @note.get("title") %>"
-    placeholder="Title..."/>
+  <input type="text" class="note-title" placeholder="Title..."/>
 </header>
 <div class="body">
 </div>

@@ -1,17 +1,15 @@
-class App.Views.Notes extends Backbone.View
+class App.Views.Notes extends Marionette.CompositeView
   template: JST['notes/index']
+
+  itemViewContainer: '.notes'
+
+  getItemView: -> App.Views.ShowNote
+
+  regionsHash:
+    actionsContainer: '.actions-container'
 
   initialize: ->
     @addActions = new App.Views.AddActions(collection: @collection)
-    @listenTo(@collection, 'reset', @render)
-    @listenTo(@collection, 'add', @renderNote)
 
-  render: =>
-    @$el.html(@template())
-    @collection.forEach(@renderNote)
+  onRender: ->
     @$el.append(@addActions.render().el)
-    this
-
-  renderNote: (note) =>
-    view = new App.Views.ShowNote(model: note, tagName: 'li')
-    @$('.notes').append(view.render().el)

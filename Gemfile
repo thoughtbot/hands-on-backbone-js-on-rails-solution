@@ -27,6 +27,8 @@ gem "active_model_serializers", "~> 0.8.0"
 gem 'backbone-on-rails', '~> 1.1.0.0'
 gem 'lodash-rails', '~> 2.2.1'
 gem "momentjs-rails", "~> 2.4.0"
+gem "backbone-stickit-rails", "~> 0.6.3"
+gem "marionette-rails", "~> 1.2.3"
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

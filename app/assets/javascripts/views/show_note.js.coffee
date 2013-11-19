@@ -1,36 +1,32 @@
-class App.Views.ShowNote extends Backbone.View
+class App.Views.ShowNote extends Marionette.Layout
   template: JST['notes/show']
 
   className: 'note'
 
-  initialize: ->
-    @listenTo(@model, "invalid", @addError)
-    @listenTo(@model, "error", @addError)
-    @lastUpdated = new App.Views.LastUpdated(model: @model)
-    @noteBody = App.viewFor(@model)
-
   events:
-    'change': 'save'
+    'change .note-title': 'saveModel'
     'keydown .note-title': 'blurIfEnter'
     'focus .note-title, .note-content': 'beginEditing'
     'blur .note-title, .note-content': 'endEditing'
     'click .destroy-note': 'destroyNote'
 
-  render: ->
-    @$el.html(@template(note: @model))
-    @lastUpdated.setElement(@$('.normal-footer')).render()
-    @noteBody.setElement(@$('.body')).render()
-    this
+  modelEvents:
+    'invalid error': 'addError'
 
-  remove: ->
-    @lastUpdated.remove(arguments...)
-    @noteBody.remove(arguments...)
-    super(arguments...)
+  bindings:
+    '.note-title': 'title'
+    '.note-content': 'content'
 
-  save: ->
-    @model.set
-      title: @$('.note-title').val()
-      content: @$('.note-content').val()
+  regions:
+    footer: '.normal-footer'
+    body: '.body'
+
+  onRender: ->
+    @stickit()
+    @footer.show(new App.Views.LastUpdated(model: @model))
+    @body.show(App.viewFor(@model))
+
+  saveModel: ->
     @model.save()
     false
 

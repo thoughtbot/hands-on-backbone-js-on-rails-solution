@@ -5,6 +5,7 @@ class App.Models.TodoList extends Backbone.Model
 
   parse: (data) ->
     @todoItems.reset(data.body.todo_list.todo_items, parse: true)
+    data.todoListId = data.body.todo_list.id
     delete data.body
     data
 
@@ -14,5 +15,5 @@ class App.Models.TodoList extends Backbone.Model
       body:
         type: "todo_list"
         todo_list:
-          todo_items: @todoItems.toJSON()
+          todo_items: @todoItems.filter((i) -> i.isValid())
     }

@@ -34,6 +34,8 @@ GEM
       ejs
       jquery-rails
       rails (>= 3.1)
+    backbone-stickit-rails (0.6.3)
+      railties (>= 3.1, <= 4.0)
     builder (3.1.4)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -61,6 +63,8 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    marionette-rails (1.2.3)
+      rails (>= 3.1.0)
     mime-types (1.25)
     minitest (4.7.5)
     momentjs-rails (2.4.0)
@@ -122,9 +126,11 @@ PLATFORMS
 DEPENDENCIES
   active_model_serializers (~> 0.8.0)
   backbone-on-rails (~> 1.1.0.0)
+  backbone-stickit-rails (~> 0.6.3)
   coffee-rails (~> 4.0.0)
   jquery-rails
   lodash-rails (~> 2.2.1)
+  marionette-rails (~> 1.2.3)
   momentjs-rails (~> 2.4.0)
   rails (= 4.0.0)
   sass-rails (~> 4.0.0)
